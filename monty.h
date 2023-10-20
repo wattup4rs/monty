@@ -92,7 +92,7 @@ stack_t *add_node(stack_t **head, const int n);
 void free_list(stack_t *head);
 
 /* get function */
-void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line number);
+void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number);
 
 /* main */
 void free_glob(void)
