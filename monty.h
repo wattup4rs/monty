@@ -95,6 +95,6 @@ void free_list(stack_t *head);
 void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number);
 
 /* main */
-void free_glob(void)
+void free_glob(void);
 
 #endif
