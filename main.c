@@ -77,5 +77,27 @@ int main(int argc, char *argv[])
 	nlines = getline(&glob.buff, &size, fdis);
 	while (nlines != -1)
 	{
-	lines[0] = strtok(			
+	lines[0] = strtok(glob.buff, " \t\n");
+		if (lines[0] && lines[0][0] != '#')
+		{
+			f = get_opcodes(lines[0]);
+			if (!f)
+			{
+				dprintf(2, "L%u: ", glob.curr);
+				dprintf(2, "unknown instruction %s\n", lines[0]);
+				free_glob();
+			
+	exit(EXIT_FAILURE);
+			}
+			glob.arg = strtok(NULL, " \t\n");
+			f(&glob.head, glob.curr);
+		}
+		nlines = getline(&glob.buff, &size, fdis);
+		glob.curr++;
 	}
+	free_glob();
+	fclose(fdis);
+
+	return (0);
+}
+
