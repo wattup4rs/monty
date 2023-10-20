@@ -86,7 +86,6 @@ int main(int argc, char *argv[])
 				dprintf(2, "L%u: ", glob.curr);
 				dprintf(2, "unknown instruction %s\n", lines[0]);
 				free_glob();
-			
 	exit(EXIT_FAILURE);
 			}
 			glob.arg = strtok(NULL, " \t\n");

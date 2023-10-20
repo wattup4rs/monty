@@ -57,7 +57,7 @@ typedef struct instructions_s
 typedef struct global
 {
 	int lifo;
-	unsigned int cur;
+	unsigned int curr;
 	char *arg;
 	stack_t *head;
 	FILE *fdis;
