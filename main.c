@@ -8,7 +8,7 @@ global glob;
  */
 void free_glob(void)
 {
-	free_ list(glob.head);
+	free_list(glob.head);
 	free(glob.buff);
 	free(glob.fdis);
 }
